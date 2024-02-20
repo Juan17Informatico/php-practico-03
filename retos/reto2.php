@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-<?php 
-
-function arbolitoNavidad(){
-    $alturaArbol = readline("¿Qué tan grande quiere que sea tu arbol? ");
-    for($i = 1; $i <= $alturaArbol; $i++){
-        
-    }
-}
-=======
 <?php
 
 /**
@@ -37,4 +27,3 @@ function dibujarArbol($size)
 
 
 dibujarArbol(20);
->>>>>>> 6e10252a4acb03ce47606e1603afb5bac45f3be0
