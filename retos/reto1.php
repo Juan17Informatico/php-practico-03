@@ -15,7 +15,7 @@
  * El estudiante con 4 años tendrá sus juguetes en la parte inferior de la bodega.
  * El estudiante con 6 años tendrá sus juguetes en la parte media de la bodega.
  * En estudiante con 10 años tendrá sus juguetes en la parte alta de la bodega.
-*/
+ */
 
 $listaEstudiantesArray = array(
     "Juan" => 4,
@@ -24,21 +24,18 @@ $listaEstudiantesArray = array(
     "Carlos" => false,
 );
 
-function puestoEnBodega($valueListaAlumnos){
+function puestoEnBodega($valueListaAlumnos)
+{
     $espacioBodega = [];
-    foreach($valueListaAlumnos as $student => $year){
-        if($year < 5 && $year > 0){
+    foreach ($valueListaAlumnos as $student => $year) {
+        if ($year < 5 && $year > 0) {
             array_push($espacioBodega, "El estudiante $student con $year años tendrá sus juguetes en la parte inferior de la bodega");
-       
-        }else if($year >= 5 && $year <= 7){
+        } else if ($year >= 5 && $year <= 7) {
             array_push($espacioBodega, "El estudiante $student con $year años tendrá sus juguetes en la parte media de la bodega");
-     
-        }else if($year > 7){
+        } else if ($year > 7) {
             array_push($espacioBodega, "El estudiante $student con $year años tendrá sus juguetes en la parte alta de la bodega");
-      
-        }else{
+        } else {
             array_push($espacioBodega, "El estudiante $student no cuenta con registro de su edad, sin embargo, aún tendrá un espacio de almacenamiento en la bodega de al lado.");
-    
         }
     }
     return $espacioBodega;
