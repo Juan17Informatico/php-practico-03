@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Descuentos a la Vista</title>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            body {
+                font-size: 15px;
+                font-family: "Arial", sans-serif;
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(5, 5, 5, 0.9);
+                width: 100vw;
+                height: 100vh;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                height: 80%;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.41);
+                border: 1px solid black;
+                border-radius: 25px;
+                box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.8);
+            }
+            label {
+                font-size: 24px;
+                color: whitesmoke;
+            }
+            input {
+                width: 300px;
+                height: 30px;
+                font-size: 16px;
+                margin-top: 20px;
+                padding: 5px;
+                text-align: center;
+                border-radius: 10px;
+            }
+
+            button {
+                width: 100px;
+                height: 30px;
+                background-color: rgba(240, 240, 240, 0.7);
+                border-radius: 10px;
+                font-size: 16px;
+            }
+
+            button:hover {
+                cursor: pointer;
+                background-color: rgba(5, 5, 5, 0.1);
+                color: whitesmoke;
+                border: 2px solid rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <form action="main.php">
+            <div class="container">
+                <label for="price">¿Cuál es el precio de tu producto?</label>
+                <input type="number" name="price" />
+                <br />
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </body>
+</html>
