@@ -4,21 +4,47 @@ $datos = $_REQUEST;
 
 $priceValue = $datos["price"];
 
-function calcularDescuento ($price){
+function calcularDescuento($price)
+{
 
-    if($price){
+    if ($price) {
         $discount = 0.35;
         $priceDiscount = $price * $discount;
         return ($price - $priceDiscount);
-    }else{
-        print_r("No ingresaste valor alguno");
+    } else {
+        return false;
     }
-
 }
 
-function imprimirPrecioConDescuento($price){
+function imprimirPrecioConDescuento($price)
+{
     $priceNew = calcularDescuento($price);
-    echo "Tu nuevo precio es: $$priceNew pesos colombianos";
+
+    if(!$priceNew){
+        return "No ingresaste valor alguno";
+    }
+    return "Tu nuevo precio es: $$priceNew pesos colombianos";
 }
 
-imprimirPrecioConDescuento($priceValue);
+$precioConDescuento = imprimirPrecioConDescuento($priceValue);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <p class="resultado"><?php echo $precioConDescuento ?></p>
+            <a href="index.html">Volver a Inicio</a>
+        </div>
+    </div>
+</body>
+
+</html>
