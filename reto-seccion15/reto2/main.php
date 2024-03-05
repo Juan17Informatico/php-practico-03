@@ -8,3 +8,11 @@
 function ordenProductos(){
     
 }
+
+function recibirDatos($datos){
+
+}
+
+$datos = $_REQUEST;
+
+print_r($datos);
