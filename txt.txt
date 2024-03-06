@@ -1,0 +1,4 @@
+array(2) { 
+    [0]=> array(1) { ["producto-1"]=> int(8) } 
+    [1]=> array(1) { ["producto-2"]=> int(48) } 
+    }
