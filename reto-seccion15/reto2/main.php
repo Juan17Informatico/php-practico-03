@@ -27,16 +27,16 @@ function recibirDatos($datos)
 }
 
 
-function ordenProductos($datosOrdenados)
+function calcularProductos($datos)
 {
     $resultado = [];
 
-    for ($i = 0, $j = 1; $i < count($datosOrdenados); $i++, $j++) {
+    for ($i = 0, $j = 1; $i < count($datos); $i++, $j++) {
 
         // var_dump($datosOrdenados[$i]["producto-$j"]);
 
-        $ancho = (int) $datosOrdenados[$i]["producto-$j"]["ancho"];
-        $altura = (int) $datosOrdenados[$i]["producto-$j"]["altura"];
+        $ancho = (int) $datos[$i]["producto-$j"]["ancho"];
+        $altura = (int) $datos[$i]["producto-$j"]["altura"];
 
 
 
@@ -50,20 +50,48 @@ function ordenProductos($datosOrdenados)
 
 function ordenarProductos($productos)
 {
-
+    $result = [];
+    // sort($productos, SORT_DESC);
     for ($i = 0, $j = 1; $i < count($productos); $i++, $j++) {
+        $result[] = $productos[$i]["producto-$j"];
+    }
 
-        $result = $productos[$i]["producto-$j"];
-        echo "Producto $j: " . $result . "<br>";
+    rsort($result, SORT_DESC);
+
+
+    foreach ($result as $key => $value) {
+        echo "Producto " . ($key + 1) . ": $value <br>";
     }
 }
 
 
-
-
 $datosOrdenados = recibirDatos($datos);
-$productosOrdendados = ordenProductos($datosOrdenados);
-ordenarProductos($productosOrdendados);
+$productosOrdendados = calcularProductos($datosOrdenados);
 
 // print_r($datos);
 // echo count($datos);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contain">
+        <div class="container">
+            <form action="">
+                <p>El resultado del ordenamiento de los productos, de mayor a menor, es el siguiente: </p>
+                <p><span>
+                        <?php ordenarProductos($productosOrdendados); ?>
+                    </span></p>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
