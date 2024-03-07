@@ -1,6 +1,0 @@
-array(4) { 
-    [0]=> array(1) { ["producto-4"]=> int(100) } 
-    [1]=> array(1) { ["producto-2"]=> int(64) } 
-    [2]=> array(1) { ["producto-3"]=> int(16) } 
-    [3]=> array(1) { ["producto-1"]=> int(4) } 
-}
